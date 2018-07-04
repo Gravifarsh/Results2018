@@ -18,16 +18,28 @@ fig = plt.figure()
 
 ax = fig.add_subplot(111)
 
-ax.plot(time, height, label="GPS")
+ax.plot(time, height, label="GPS", linewidth=2)
 
 temp = [line[3] for line in data]
 press = [line[1] for line in data]
 
-for i in range(1, len(data)):
-    h = 44330 * (1.0 - pow(press[i]/press[0], 0.1903));
-    height.append(h)
+height = [44330 * (1.0 - (p / 101300) ** 0.1903) for p in press]
+
+x1, y1 = 1330, 700
+x2, y2 = 1420, 75
+k = (y1 - y2) / (x1 - x2)
+b = y1 - k * x1
+
+filtered_h = list()
+filtered_t = list()
+
+for i in range(len(data)):
+    if 1330 < time[i] < 1420 and abs(k * time[i] + b - height[i]) > 20:
+        continue
+    filtered_h.append(height[i])
+    filtered_t.append(time[i])
     
-ax.plot(time, height, label="BMP")
+ax.plot(filtered_t, filtered_h, label="BMP", linewidth=2)
 ax.legend()
 
 ax.set_xlabel("Время, с")
