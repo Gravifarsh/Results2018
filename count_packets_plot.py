@@ -68,4 +68,4 @@ ax.plot(sd, [(x + 1) / 100.0 for x in range(len(sd))], "g.", linewidth=3)
 
 fig.tight_layout()
 
-fig.savefig("telemetry_statistics.png")
+fig.savefig("telemetry_statistics.png", dpi=500)
