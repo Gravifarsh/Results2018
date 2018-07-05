@@ -45,8 +45,8 @@ ax.legend()
 ax.set_xlabel("Время, с")
 ax.set_ylabel("Высота над уровнем моря, м")
 
-oneticker = pltticker.MultipleLocator(10)
-twoticker = pltticker.MultipleLocator(50)
+oneticker = pltticker.MultipleLocator(2)
+twoticker = pltticker.MultipleLocator(20)
 ax.xaxis.set_minor_locator(oneticker)
 ax.yaxis.set_minor_locator(twoticker)
 

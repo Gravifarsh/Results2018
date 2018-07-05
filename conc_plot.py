@@ -53,7 +53,7 @@ ax.grid(True, which="minor", alpha=0.2)
 #-------------------------------------------
 ax = fig.add_subplot(313)
 ax.set_xlabel("Время, с")
-ax.set_ylabel("Высота, м")
+ax.set_ylabel("Высота над уровнем\nморя, м")
 
 ax.plot(time, height, "green", label="GPS")
 
