@@ -11,7 +11,7 @@ with open("sd.csv", "r") as f:
     sd = [float(line.split(";")[0]) / 1000 for line in list(f)]
 
 
-fig = plt.figure()
+fig = plt.figure(figsize=(16, 9))
 
 #-------------------------------------------
 ax = fig.add_subplot(211)

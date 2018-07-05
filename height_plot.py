@@ -14,7 +14,7 @@ data = [line for line in data if 1310000 < line[0] < 1430000]
 time = [line[0] / 1000 for line in data]
 height = [line[10] for line in data]
 
-fig = plt.figure()
+fig = plt.figure(figsize=(16, 9))
 
 ax = fig.add_subplot(111)
 

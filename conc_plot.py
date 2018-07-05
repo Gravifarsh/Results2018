@@ -16,7 +16,7 @@ height = [line[10] for line in data]
 co2 = [line[7] for line in data]
 co = [line[8] for line in data]
 
-fig = plt.figure()
+fig = plt.figure(figsize=(16, 9))
 
 #-------------------------------------------
 ax = fig.add_subplot(311)

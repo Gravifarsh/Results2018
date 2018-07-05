@@ -38,7 +38,7 @@ for i in range(len(data)):
     if time[i] > 1430: 
         break   
 
-fig = plt.figure()
+fig = plt.figure(figsize=(16, 9))
 
 #---------------------------------
 ax = fig.add_subplot(211)
@@ -72,13 +72,13 @@ ax.grid(True, which="minor", alpha=0.2)
 
 ax.legend()
 
-ax.set_ylabel("Радиационный\nфон, мкРн/ч")
+ax.set_ylabel("Радиационный\nфон, мкР/ч")
 ax.set_xlabel("Время, с")
 
 
 fig.tight_layout()
 
-fig.savefig("radiation.png", dpi=500)
+fig.savefig("radiation_big.png", dpi=500)
 
 
 
